@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chumble</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="images/logo.png" alt="logo" class="logo" />
+      <div class="content">
+        <h1>We are coming soon</h1>
+        <p>To provide you a different experience in the shopping world</p>
+        <div class="launch-timer">
+          <div class="countdown">
+            <p id="days">30</p>
+            <span>Days</span>
+          </div>
+          <div class="countdown">
+            <p id="hours">30</p>
+            <span>Hours</span>
+          </div>
+          <div class="countdown">
+            <p id="minutes">30</p>
+            <span>Minutes</span>
+          </div>
+          <div class="countdown">
+            <p id="seconds">30</p>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="images/rocket.png" alt="rocket" class="rocket" />
+
+    <script>
+      const countdown = new Date("2025-04-20T00:00:00").getTime();
+      var x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countdown - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.querySelector("#days").textContent = days;
+        document.querySelector("#hours").textContent = hours;
+        document.querySelector("#minutes").textContent = minutes;
+        document.querySelector("#seconds").textContent = seconds;
+        if (distance < 0) {
+          clearInterval(x);
+          document.querySelector("#days").textContent = "00";
+          document.querySelector("#hours").textContent = "00";
+          document.querySelector("#minutes").textContent = "00";
+          document.querySelector("#seconds").textContent = "00";
+          document.querySelector(".rocket").style.display = "none";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

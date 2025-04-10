@@ -1,0 +1,106 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(images/background.png);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+
+.content {
+    top:50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color:rgb(28, 77, 77);
+    margin-left: 50px;
+}
+
+.content h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.content p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.content button {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px; 
+    background: transparent ;
+    border: 2px solid rgb(28, 77, 77);
+    color: rgb(28, 77, 77);
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.launch-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.countdown p {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.countdown span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.rocket {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  width: 250px;
+  z-index: 100;
+  animation: rocket 4s linear infinite;
+}
+
+@keyframes rocket {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+    100% {
+         bottom : 105%;
+         opacity: 1;  
+    }
+    
+}
