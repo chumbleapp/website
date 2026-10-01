@@ -5,38 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Chumble brings the best food around you, right to your door in Ghana." />
   <title>Chumble — Ghana's good food, delivered</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#201c2a; --cream:#fffaf2; --orange:#ff6b35; --gold:#ffcd69; --leaf:#567343; --line:#eadfd2; }
+    :root { color-scheme:light; --ink:#201c2a; --cream:#fffaf2; --surface:#fff; --muted:#625d69; --subtle:#736e76; --orange:#ff6b35; --gold:#ffcd69; --leaf:#567343; --line:#eadfd2; --plate:#f6eee5; --card-border:#f1e7dd; --soft-orange:#fff0e9; --soft-green:#e8f0e2; --badge:#ffe4d8; --shadow:#54351720; --strip:#201c2a; }
+    [data-theme="dark"] { color-scheme:dark; --ink:#f8f1e7; --cream:#19171e; --surface:#25212b; --muted:#c9c1cc; --subtle:#b9afbc; --orange:#ff8052; --gold:#ffd36f; --leaf:#a8c98d; --line:#403946; --plate:#3a343d; --card-border:#443d49; --soft-orange:#402a29; --soft-green:#29352a; --badge:#4d302c; --shadow:#00000042; --strip:#0f0d13; }
     * { box-sizing:border-box } html { scroll-behavior:smooth } body { margin:0; background:var(--cream); color:var(--ink); font-family:'DM Sans',sans-serif; }
     .nav { max-width:1180px; height:88px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:0 26px; }
     .brand { color:var(--ink); text-decoration:none; font-family:Fraunces,serif; font-size:30px; font-weight:800; letter-spacing:-1.8px; } .brand i { color:var(--orange); font-style:normal; }
     .nav-links { display:flex; gap:30px; align-items:center; } .nav-links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:14px; }
+    .brand-logo { width:48px; height:48px; object-fit:contain; } .theme-toggle { width:42px; height:42px; border:1px solid var(--line); border-radius:50%; color:var(--ink); background:var(--surface); cursor:pointer; font-size:18px; line-height:1; transition:transform .2s,background .2s; } .theme-toggle:hover { transform:translateY(-2px); background:var(--soft-orange); }
     .button { display:inline-flex; align-items:center; justify-content:center; border-radius:100px; border:0; background:var(--orange); color:white; padding:15px 23px; text-decoration:none; font-weight:700; font-size:15px; transition:.2s transform,.2s background; } .button:hover { transform:translateY(-2px); background:#ec5926; }
     .button.dark { background:var(--ink) } .button.dark:hover { background:#343041 }
     .hero { max-width:1180px; min-height:650px; margin:auto; padding:45px 26px 78px; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:48px; position:relative; overflow:hidden; }
     .eyebrow { display:inline-flex; gap:8px; align-items:center; color:var(--leaf); background:#e7f0df; border-radius:99px; padding:8px 13px; font-weight:700; font-size:13px; } .pulse { width:8px; height:8px; background:var(--orange); border-radius:50%; }
     h1 { font-family:Fraunces,serif; font-size:clamp(47px,6vw,76px); line-height:.98; letter-spacing:-3.5px; margin:22px 0; max-width:650px; } h1 em { color:var(--orange); font-style:normal; }
-    .hero-copy p { font-size:18px; line-height:1.55; color:#625d69; max-width:490px; margin:0 0 28px; } .hero-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-    .small-note { color:#736e76; font-size:13px; margin-left:4px; } .small-note strong { color:var(--ink); }
+    .hero-copy p { font-size:18px; line-height:1.55; color:var(--muted); max-width:490px; margin:0 0 28px; } .hero-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .small-note { color:var(--subtle); font-size:13px; margin-left:4px; } .small-note strong { color:var(--ink); }
     .hero-art { height:478px; position:relative; } .sun { position:absolute; inset:20px 7px auto auto; width:395px; height:395px; background:var(--gold); border-radius:48% 52% 47% 53%; transform:rotate(-9deg); }
-    .plate { position:absolute; width:345px; height:345px; background:#f6eee5; border:13px solid #fff; border-radius:50%; box-shadow:0 18px 35px #8c582929; right:65px; top:75px; display:grid; place-items:center; transform:rotate(10deg); }
+    .plate { position:absolute; width:345px; height:345px; background:var(--plate); border:13px solid var(--surface); border-radius:50%; box-shadow:0 18px 35px var(--shadow); right:65px; top:75px; display:grid; place-items:center; transform:rotate(10deg); }
     .bowl { width:235px; height:150px; border-radius:30px 30px 116px 116px; background:#b74426; box-shadow:inset 0 -14px #8d321f, 0 12px 15px #62302133; position:relative; overflow:hidden; } .food { position:absolute; width:192px; height:76px; background:radial-gradient(circle at 20% 30%,#f8d468 0 11px,transparent 12px),radial-gradient(circle at 47% 55%,#7db15f 0 14px,transparent 15px),radial-gradient(circle at 74% 20%,#f7a94c 0 12px,transparent 13px),#f2c866; border-radius:50%; left:21px; top:10px; }
-    .floating { position:absolute; background:white; border-radius:18px; box-shadow:0 13px 30px #54351720; padding:12px 15px; font-weight:700; font-size:13px; display:flex; gap:10px; align-items:center; } .rating { left:2px; top:118px; } .delivery { right:0; bottom:36px; } .badge-icon { width:29px; height:29px; border-radius:9px; background:#ffe4d8; display:grid; place-items:center; }
-    .strip { background:var(--ink); color:#fff9f0; overflow:hidden; } .strip-inner { min-height:88px; display:flex; align-items:center; justify-content:center; gap:38px; font-family:Fraunces,serif; font-size:20px; white-space:nowrap; } .strip b { color:var(--gold); font-size:24px; }
-    .section { max-width:1180px; padding:100px 26px; margin:auto; } .section-header { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:36px; } h2 { font-family:Fraunces,serif; font-size:45px; letter-spacing:-2px; line-height:1; margin:0; } .section-header p { max-width:350px; margin:0; color:#625d69; line-height:1.5; }
-    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .step { padding:29px; min-height:238px; border-radius:24px; background:#fff; border:1px solid #f1e7dd; } .step:nth-child(2) { background:#fff0e9; } .step:nth-child(3) { background:#e8f0e2; } .step-icon { font-size:43px; } .step h3 { font-family:Fraunces,serif; font-size:23px; margin:20px 0 9px; } .step p { margin:0; color:#625d69; line-height:1.5; }
+    .floating { position:absolute; background:var(--surface); border-radius:18px; box-shadow:0 13px 30px var(--shadow); padding:12px 15px; font-weight:700; font-size:13px; display:flex; gap:10px; align-items:center; } .rating { left:2px; top:118px; } .delivery { right:0; bottom:36px; } .badge-icon { width:29px; height:29px; border-radius:9px; background:var(--badge); display:grid; place-items:center; }
+    .strip { background:var(--strip); color:#fff9f0; overflow:hidden; } .strip-inner { min-height:88px; display:flex; align-items:center; justify-content:center; gap:38px; font-family:Fraunces,serif; font-size:20px; white-space:nowrap; } .strip b { color:var(--gold); font-size:24px; }
+    .section { max-width:1180px; padding:100px 26px; margin:auto; } .section-header { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:36px; } h2 { font-family:Fraunces,serif; font-size:45px; letter-spacing:-2px; line-height:1; margin:0; } .section-header p { max-width:350px; margin:0; color:var(--muted); line-height:1.5; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .step { padding:29px; min-height:238px; border-radius:24px; background:var(--surface); border:1px solid var(--card-border); } .step:nth-child(2) { background:var(--soft-orange); } .step:nth-child(3) { background:var(--soft-green); } .step-icon { font-size:43px; } .step h3 { font-family:Fraunces,serif; font-size:23px; margin:20px 0 9px; } .step p { margin:0; color:var(--muted); line-height:1.5; }
     .app-banner { margin:0 26px 100px; max-width:1128px; margin-left:auto; margin-right:auto; background:var(--orange); overflow:hidden; border-radius:30px; color:white; padding:54px 62px; display:flex; align-items:center; justify-content:space-between; position:relative; } .app-banner:after { content:''; position:absolute; width:380px; height:380px; background:#ff946e; border-radius:50%; right:-110px; top:-135px; } .app-banner > * { position:relative; z-index:1; } .app-banner h2 { max-width:510px; } .app-banner p { margin:15px 0 26px; font-size:17px; } .app-banner .button { background:white; color:var(--ink); }
-    footer { border-top:1px solid var(--line); max-width:1128px; margin:auto; padding:28px 0 40px; display:flex; gap:20px; justify-content:space-between; color:#726c72; font-size:13px; } footer .brand { font-size:22px; } .footer-links { display:flex; gap:16px; } .footer-links a { color:inherit; text-decoration:none; } .footer-links a:hover { color:var(--orange); }
+    footer { border-top:1px solid var(--line); max-width:1128px; margin:auto; padding:28px 0 40px; display:flex; gap:20px; justify-content:space-between; color:var(--subtle); font-size:13px; } footer .brand { font-size:22px; } footer .brand-logo { width:38px; height:38px; } .footer-links { display:flex; gap:16px; } .footer-links a { color:inherit; text-decoration:none; } .footer-links a:hover { color:var(--orange); }
     @media(max-width:720px) { .nav { height:76px; padding:0 20px; } .nav-links a:not(.button) { display:none; } .hero { grid-template-columns:1fr; padding:36px 20px 55px; min-height:0; gap:10px; } .hero-art { height:330px; transform:scale(.82); transform-origin:top center; margin-bottom:-55px; } h1 { letter-spacing:-2.5px; } .strip-inner { gap:18px; font-size:16px; min-height:70px; } .section { padding:68px 20px; } .section-header { display:block; } .section-header p { margin-top:17px; } h2 { font-size:38px; } .steps { grid-template-columns:1fr; } .step { min-height:0; } .app-banner { margin:0 20px 68px; padding:40px 28px; } .app-banner:after { opacity:.45; } footer { margin:0 20px; flex-direction:column; } }
   </style>
 </head>
 <body>
   <nav class="nav">
-    <a class="brand" href="#top">chumbl<i>e</i>.</a>
-    <div class="nav-links"><a href="#how">How it works</a><a href="#about">About us</a><a class="button" href="#get-app">Get the app</a></div>
+    <a class="brand" href="#top" aria-label="Chumble home"><img class="brand-logo" src="logo.png" alt="Chumble"></a>
+    <div class="nav-links"><a href="#how">How it works</a><a href="#about">About us</a><button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">☾</button><a class="button" href="#get-app">Get the app</a></div>
   </nav>
   <main id="top">
     <section class="hero">
@@ -59,6 +63,21 @@
     </section>
     <section class="app-banner" id="get-app"><div><h2>Hungry yet? Let’s get Chumbling.</h2><p>Join the food-loving community that keeps Ghana moving, one delicious delivery at a time.</p><a class="button" href="mailto:hello@chumble.com?subject=Chumble%20app%20updates">Keep me updated&nbsp; →</a></div></section>
   </main>
-  <footer id="about"><a class="brand" href="#top">chumbl<i>e</i>.</a><span>Chumble is a food delivery company registered in Ghana.</span><span class="footer-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></span><span>© 2026 Chumble</span></footer>
+  <footer id="about"><a class="brand" href="#top" aria-label="Chumble home"><img class="brand-logo" src="logo.png" alt="Chumble"></a><span>Chumble is a food delivery company registered in Ghana.</span><span class="footer-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></span><span>© 2026 Chumble</span></footer>
+  <script>
+    (() => {
+      const key = 'chumble-theme';
+      const toggle = document.querySelector('.theme-toggle');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+      const setTheme = theme => {
+        document.documentElement.dataset.theme = theme;
+        toggle.textContent = theme === 'dark' ? '☀' : '☾';
+        toggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`);
+        toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+      };
+      setTheme(localStorage.getItem(key) || (prefersDark.matches ? 'dark' : 'light'));
+      toggle.addEventListener('click', () => { const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; localStorage.setItem(key, theme); setTheme(theme); });
+    })();
+  </script>
 </body>
 </html>
