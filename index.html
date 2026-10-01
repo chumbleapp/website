@@ -1,64 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chumble</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
-  </head>
-  <body>
-    <div class="container">
-      <img src="images/logo.png" alt="logo" class="logo" />
-      <div class="content">
-        <h1>We are coming soon</h1>
-        <p>To provide you a different experience in the shopping world</p>
-        <div class="launch-timer">
-          <div class="countdown">
-            <p id="days">30</p>
-            <span>Days</span>
-          </div>
-          <div class="countdown">
-            <p id="hours">30</p>
-            <span>Hours</span>
-          </div>
-          <div class="countdown">
-            <p id="minutes">30</p>
-            <span>Minutes</span>
-          </div>
-          <div class="countdown">
-            <p id="seconds">30</p>
-            <span>Seconds</span>
-          </div>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Chumble brings the best food around you, right to your door in Ghana." />
+  <title>Chumble — Ghana's good food, delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#201c2a; --cream:#fffaf2; --orange:#ff6b35; --gold:#ffcd69; --leaf:#567343; --line:#eadfd2; }
+    * { box-sizing:border-box } html { scroll-behavior:smooth } body { margin:0; background:var(--cream); color:var(--ink); font-family:'DM Sans',sans-serif; }
+    .nav { max-width:1180px; height:88px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:0 26px; }
+    .brand { color:var(--ink); text-decoration:none; font-family:Fraunces,serif; font-size:30px; font-weight:800; letter-spacing:-1.8px; } .brand i { color:var(--orange); font-style:normal; }
+    .nav-links { display:flex; gap:30px; align-items:center; } .nav-links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:14px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; border-radius:100px; border:0; background:var(--orange); color:white; padding:15px 23px; text-decoration:none; font-weight:700; font-size:15px; transition:.2s transform,.2s background; } .button:hover { transform:translateY(-2px); background:#ec5926; }
+    .button.dark { background:var(--ink) } .button.dark:hover { background:#343041 }
+    .hero { max-width:1180px; min-height:650px; margin:auto; padding:45px 26px 78px; display:grid; grid-template-columns:1.05fr .95fr; align-items:center; gap:48px; position:relative; overflow:hidden; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; color:var(--leaf); background:#e7f0df; border-radius:99px; padding:8px 13px; font-weight:700; font-size:13px; } .pulse { width:8px; height:8px; background:var(--orange); border-radius:50%; }
+    h1 { font-family:Fraunces,serif; font-size:clamp(47px,6vw,76px); line-height:.98; letter-spacing:-3.5px; margin:22px 0; max-width:650px; } h1 em { color:var(--orange); font-style:normal; }
+    .hero-copy p { font-size:18px; line-height:1.55; color:#625d69; max-width:490px; margin:0 0 28px; } .hero-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .small-note { color:#736e76; font-size:13px; margin-left:4px; } .small-note strong { color:var(--ink); }
+    .hero-art { height:478px; position:relative; } .sun { position:absolute; inset:20px 7px auto auto; width:395px; height:395px; background:var(--gold); border-radius:48% 52% 47% 53%; transform:rotate(-9deg); }
+    .plate { position:absolute; width:345px; height:345px; background:#f6eee5; border:13px solid #fff; border-radius:50%; box-shadow:0 18px 35px #8c582929; right:65px; top:75px; display:grid; place-items:center; transform:rotate(10deg); }
+    .bowl { width:235px; height:150px; border-radius:30px 30px 116px 116px; background:#b74426; box-shadow:inset 0 -14px #8d321f, 0 12px 15px #62302133; position:relative; overflow:hidden; } .food { position:absolute; width:192px; height:76px; background:radial-gradient(circle at 20% 30%,#f8d468 0 11px,transparent 12px),radial-gradient(circle at 47% 55%,#7db15f 0 14px,transparent 15px),radial-gradient(circle at 74% 20%,#f7a94c 0 12px,transparent 13px),#f2c866; border-radius:50%; left:21px; top:10px; }
+    .floating { position:absolute; background:white; border-radius:18px; box-shadow:0 13px 30px #54351720; padding:12px 15px; font-weight:700; font-size:13px; display:flex; gap:10px; align-items:center; } .rating { left:2px; top:118px; } .delivery { right:0; bottom:36px; } .badge-icon { width:29px; height:29px; border-radius:9px; background:#ffe4d8; display:grid; place-items:center; }
+    .strip { background:var(--ink); color:#fff9f0; overflow:hidden; } .strip-inner { min-height:88px; display:flex; align-items:center; justify-content:center; gap:38px; font-family:Fraunces,serif; font-size:20px; white-space:nowrap; } .strip b { color:var(--gold); font-size:24px; }
+    .section { max-width:1180px; padding:100px 26px; margin:auto; } .section-header { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:36px; } h2 { font-family:Fraunces,serif; font-size:45px; letter-spacing:-2px; line-height:1; margin:0; } .section-header p { max-width:350px; margin:0; color:#625d69; line-height:1.5; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .step { padding:29px; min-height:238px; border-radius:24px; background:#fff; border:1px solid #f1e7dd; } .step:nth-child(2) { background:#fff0e9; } .step:nth-child(3) { background:#e8f0e2; } .step-icon { font-size:43px; } .step h3 { font-family:Fraunces,serif; font-size:23px; margin:20px 0 9px; } .step p { margin:0; color:#625d69; line-height:1.5; }
+    .app-banner { margin:0 26px 100px; max-width:1128px; margin-left:auto; margin-right:auto; background:var(--orange); overflow:hidden; border-radius:30px; color:white; padding:54px 62px; display:flex; align-items:center; justify-content:space-between; position:relative; } .app-banner:after { content:''; position:absolute; width:380px; height:380px; background:#ff946e; border-radius:50%; right:-110px; top:-135px; } .app-banner > * { position:relative; z-index:1; } .app-banner h2 { max-width:510px; } .app-banner p { margin:15px 0 26px; font-size:17px; } .app-banner .button { background:white; color:var(--ink); }
+    footer { border-top:1px solid var(--line); max-width:1128px; margin:auto; padding:28px 0 40px; display:flex; gap:20px; justify-content:space-between; color:#726c72; font-size:13px; } footer .brand { font-size:22px; } .footer-links { display:flex; gap:16px; } .footer-links a { color:inherit; text-decoration:none; } .footer-links a:hover { color:var(--orange); }
+    @media(max-width:720px) { .nav { height:76px; padding:0 20px; } .nav-links a:not(.button) { display:none; } .hero { grid-template-columns:1fr; padding:36px 20px 55px; min-height:0; gap:10px; } .hero-art { height:330px; transform:scale(.82); transform-origin:top center; margin-bottom:-55px; } h1 { letter-spacing:-2.5px; } .strip-inner { gap:18px; font-size:16px; min-height:70px; } .section { padding:68px 20px; } .section-header { display:block; } .section-header p { margin-top:17px; } h2 { font-size:38px; } .steps { grid-template-columns:1fr; } .step { min-height:0; } .app-banner { margin:0 20px 68px; padding:40px 28px; } .app-banner:after { opacity:.45; } footer { margin:0 20px; flex-direction:column; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="#top">chumbl<i>e</i>.</a>
+    <div class="nav-links"><a href="#how">How it works</a><a href="#about">About us</a><a class="button" href="#get-app">Get the app</a></div>
+  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="pulse"></span> Proudly Ghanaian</span>
+        <h1>Your favourite food, <em>right around the corner.</em></h1>
+        <p>Chumble connects you with the restaurants, chop bars and neighbourhood kitchens you love — delivered straight to your door.</p>
+        <div class="hero-actions"><a class="button" href="#get-app">Find food near me&nbsp; →</a><span class="small-note">Fast, local, <strong>delicious.</strong></span></div>
       </div>
-    </div>
-    <img src="images/rocket.png" alt="rocket" class="rocket" />
-
-    <script>
-      const countdown = new Date("2025-07-01T00:00:00").getTime();
-      var x = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = countdown - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.querySelector("#days").textContent = days;
-        document.querySelector("#hours").textContent = hours;
-        document.querySelector("#minutes").textContent = minutes;
-        document.querySelector("#seconds").textContent = seconds;
-        if (distance < 0) {
-          clearInterval(x);
-          document.querySelector("#days").textContent = "00";
-          document.querySelector("#hours").textContent = "00";
-          document.querySelector("#minutes").textContent = "00";
-          document.querySelector("#seconds").textContent = "00";
-          document.querySelector(".rocket").style.display = "none";
-        }
-      }, 1000);
-    </script>
-  </body>
+      <div class="hero-art" aria-label="A colourful bowl of Ghanaian-inspired food illustration">
+        <div class="sun"></div><div class="plate"><div class="bowl"><div class="food"></div></div></div>
+        <div class="floating rating"><span class="badge-icon">★</span><span>4.8<br><small>happy eaters</small></span></div>
+        <div class="floating delivery"><span class="badge-icon">🛵</span><span>On its way<br><small>to your door</small></span></div>
+      </div>
+    </section>
+    <div class="strip"><div class="strip-inner"><span>Good food is close</span><b>✦</b><span>Made for Ghana</span><b>✦</b><span>Delivered with care</span></div></div>
+    <section class="section" id="how">
+      <div class="section-header"><h2>Simple as a<br>good meal.</h2><p>Whether it’s waakye for breakfast or jollof for dinner, your next meal is only a few taps away.</p></div>
+      <div class="steps"><article class="step"><div class="step-icon">📍</div><h3>Tell us where you are</h3><p>See great food and local favourites available around you.</p></article><article class="step"><div class="step-icon">🍲</div><h3>Pick what you crave</h3><p>Browse menus, discover new spots and build your perfect order.</p></article><article class="step"><div class="step-icon">🛵</div><h3>We bring it to you</h3><p>Follow your order from kitchen to doorstep, with every bite handled with care.</p></article></div>
+    </section>
+    <section class="app-banner" id="get-app"><div><h2>Hungry yet? Let’s get Chumbling.</h2><p>Join the food-loving community that keeps Ghana moving, one delicious delivery at a time.</p><a class="button" href="mailto:hello@chumble.com?subject=Chumble%20app%20updates">Keep me updated&nbsp; →</a></div></section>
+  </main>
+  <footer id="about"><a class="brand" href="#top">chumbl<i>e</i>.</a><span>Chumble is a food delivery company registered in Ghana.</span><span class="footer-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></span><span>© 2026 Chumble</span></footer>
+</body>
 </html>
