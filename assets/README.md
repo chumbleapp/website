@@ -14,3 +14,9 @@ These are general stock photographs, not photographs of Chumble partners or thei
 `inter-variable.woff2` is the open-source Inter variable font from
 https://rsms.me/inter/font-files/InterVariable.woff2.
 Its license is included in `inter-LICENSE.txt`.
+
+## Branded delivery partner image
+
+`delivery-partner-chumble.jpg` is the website version of the original delivery rider stock photograph, edited using the built-in image generation tool. The original `delivery-partner.jpg` is preserved.
+
+Edit prompt: Replace only the generic serving-cloche emblem on the beige delivery backpack panel with the supplied Chumble logo. Match its perspective, lighting, fabric wear and grain. Preserve the rider, bicycle, street, cars, people, framing and all other details. Do not add text or a white logo patch.

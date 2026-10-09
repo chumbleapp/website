@@ -8,7 +8,7 @@
   <title>Chumble — Food, shopping and bookings</title>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="preload" href="assets/dining.jpg" as="image">
+  <link rel="preload" href="assets/shopping.jpg" as="image">
   <link rel="preload" href="assets/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="site.js" defer></script>
@@ -16,23 +16,25 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="hero-shell">
-    <img class="hero-background" src="assets/dining.jpg" width="2000" height="1333" alt="A freshly prepared restaurant meal served at a dining table" fetchpriority="high">
     <header class="site-header wrap">
       <a class="wordmark" href="index.html" aria-label="Chumble home"><img src="logo.png" width="44" height="44" alt=""><span>chumble</span></a>
       <nav aria-label="Main navigation"><a href="#services">Our services</a><a href="#join">Become a partner</a></nav>
       <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">☾</button><a class="header-app" href="#get-app">Get in touch</a></div>
     </header>
     <section class="hero wrap" aria-labelledby="hero-title">
-      <p class="hero-brand" aria-hidden="true">chumble</p>
-      <h1 id="hero-title">Food. Shopping. Bookings.<br>All in one place.</h1>
-      <p>Order a meal, shop local stores, or make a booking.<br>From groceries to hardware and clothing, we bring it to you.</p>
+      <div class="hero-copy"><span class="hero-kicker">FOUR SERVICES. ONE CHUMBLE.</span><h1 id="hero-title">Food. Shopping.<br>Tables. Event halls.</h1><p>Lunch at your door. Supplies for your home.<br>A table for dinner. A hall for your celebration.<br>Make it happen with Chumble.</p><a class="button button-gold" href="#services">Explore our services <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-gallery" aria-label="Explore Chumble’s four services">
+        <a href="#delivery"><img src="assets/food.jpg" width="1400" height="1400" alt="A colourful freshly prepared meal" fetchpriority="high"><span>Food ordering <span aria-hidden="true">↗</span></span></a>
+        <a href="#shopping"><img src="assets/shopping.jpg" width="1000" height="667" alt="Fresh produce displayed at a local store" fetchpriority="high"><span>Shopping &amp; delivery <span aria-hidden="true">↗</span></span></a>
+        <a href="#tables"><img src="assets/restaurant.jpg" width="1000" height="667" alt="Restaurant tables ready for dining" fetchpriority="high"><span>Table booking <span aria-hidden="true">↗</span></span></a>
+        <a href="#events"><img src="assets/venue.jpg" width="1000" height="667" alt="An event hall set up for a gathering" fetchpriority="high"><span>Event hall booking <span aria-hidden="true">↗</span></span></a>
+      </div>
       <div class="hero-start"><span class="hero-start-label">What do you need?</span><nav class="service-shortcuts" aria-label="Choose your Chumble service">
         <a href="#delivery"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z M8 8V6a4 4 0 0 1 8 0v2"/></svg><span>Food ordering</span><span aria-hidden="true">→</span></a>
         <a href="#shopping"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h2l3 12h11l2-8H6 M9 20h.01 M18 20h.01"/></svg><span>Shopping &amp; delivery</span><span aria-hidden="true">→</span></a>
         <a href="#tables"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3v5c0 3 5 3 5 0V3 M6.5 3v18 M17 3c-4 4-4 8 1 8V3v18"/></svg><span>Table booking</span><span aria-hidden="true">→</span></a>
         <a href="#events"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v16H4Z M8 3v4 M16 3v4 M4 10h16 M8 14h2 M14 14h2 M8 18h2"/></svg><span>Event hall booking</span><span aria-hidden="true">→</span></a>
       </nav></div>
-      <a class="scroll-link" href="#main">Discover more <span aria-hidden="true">⌄</span></a>
     </section>
   </div>
   <main id="main">
@@ -67,7 +69,7 @@
     <section class="partners wrap" id="join" aria-labelledby="partners-title"><div class="section-heading partner-heading"><h2 id="partners-title">Grow with Chumble.</h2><p>For restaurant owners and delivery partners in Ghana.</p></div>
       <div class="partner-tabs" role="tablist" aria-label="Partner opportunities"><button class="plan-tab" id="tab-restaurants" role="tab" aria-selected="true" aria-controls="panel-restaurants" tabindex="0">Restaurant partners</button><button class="plan-tab" id="tab-couriers" role="tab" aria-selected="false" aria-controls="panel-couriers" tabindex="-1">Delivery partners</button></div>
       <article class="partner-panel" id="panel-restaurants" role="tabpanel" aria-labelledby="tab-restaurants" tabindex="0"><img src="assets/restaurant.jpg" width="1000" height="667" alt="A restaurant dining room with tables and warm lighting" loading="lazy"><div><span class="eyebrow">FOR RESTAURANTS</span><h3>Reach more customers.</h3><p>Bring your menu to Chumble. Receive food orders and table bookings, with support for delivery.</p><a class="button" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20restaurant%20partner">Become a restaurant partner</a></div></article>
-      <article class="partner-panel courier-panel" id="panel-couriers" role="tabpanel" aria-labelledby="tab-couriers" tabindex="0" hidden><img src="assets/delivery-partner.jpg" width="1200" height="800" alt="A delivery rider cycling through a street with an insulated food delivery backpack" loading="lazy"><div><span class="eyebrow">FOR DELIVERY PARTNERS</span><h3>Earn with every delivery.</h3><p>Deliver orders in your community. Choose when you want to work and earn from completed deliveries.</p><a class="button" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20delivery%20partner">Become a delivery partner</a></div></article>
+      <article class="partner-panel courier-panel" id="panel-couriers" role="tabpanel" aria-labelledby="tab-couriers" tabindex="0" hidden><img src="assets/delivery-partner-chumble.jpg" width="1536" height="1024" alt="A delivery rider cycling with a food delivery backpack displaying the Chumble logo" loading="lazy"><div><span class="eyebrow">FOR DELIVERY PARTNERS</span><h3>Earn with every delivery.</h3><p>Deliver orders in your community. Choose when you want to work and earn from completed deliveries.</p><a class="button" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20delivery%20partner">Become a delivery partner</a></div></article>
     </section>
     <section class="faq-section wrap" id="faq" aria-labelledby="faq-title"><div class="faq-heading"><span class="eyebrow">A LITTLE HELP BEFORE YOU START</span><h2 id="faq-title">Good questions.</h2><p>Can’t find your answer?<br><a href="mailto:hello@chumble.app">Talk to the Chumble team →</a></p></div><div class="faq-list">
       <details><summary>How do I get the Chumble app?</summary><p>Email <a href="mailto:hello@chumble.app?subject=Chumble%20app%20availability">hello@chumble.app</a> for app availability and updates. We’ll help you find the right place to start.</p></details>
