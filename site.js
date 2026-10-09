@@ -51,3 +51,48 @@
     });
   });
 })();
+
+// Run each service story once on arrival and replay only on a deliberate interaction.
+(() => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const targets = [...document.querySelectorAll('.service-card, .journey-panel')];
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+  const active = new Set();
+  const timers = new Map();
+  const play = element => {
+    if (reducedMotion.matches || document.hidden || !active.has(element)) return;
+    if (element.getAnimations({ subtree: true }).some(animation => animation.playState === 'running')) return;
+    element.classList.remove('is-in-view');
+    // A fresh style calculation starts the same short sequence without layout changes.
+    void element.offsetWidth;
+    element.classList.add('is-in-view');
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        active.add(entry.target);
+        play(entry.target);
+      } else {
+        active.delete(entry.target);
+        entry.target.classList.remove('is-in-view');
+      }
+    });
+  }, { threshold: .25 });
+  targets.forEach(element => {
+    observer.observe(element);
+    const replay = () => {
+      clearTimeout(timers.get(element));
+      timers.set(element, setTimeout(() => { timers.delete(element); play(element); }, 120));
+    };
+    element.addEventListener('pointerenter', replay);
+    element.addEventListener('focusin', replay);
+  });
+  reducedMotion.addEventListener('change', () => {
+    targets.forEach(element => element.classList.remove('is-in-view'));
+    if (!reducedMotion.matches) active.forEach(play);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) targets.forEach(element => element.classList.remove('is-in-view'));
+    else active.forEach(play);
+  });
+})();
