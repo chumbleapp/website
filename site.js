@@ -96,3 +96,13 @@
     else active.forEach(play);
   });
 })();
+
+// Account for the wrapped mobile navigation when scrolling to a section.
+(() => {
+  const header = document.querySelector('.brand-header');
+  if (!header) return;
+  const updateHeight = () => document.documentElement.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+  updateHeight();
+  if ('ResizeObserver' in window) new ResizeObserver(updateHeight).observe(header);
+  else window.addEventListener('resize', updateHeight);
+})();

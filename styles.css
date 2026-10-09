@@ -43,3 +43,19 @@ body.legal .nav,body.legal main,body.legal footer{max-width:900px;margin:auto;pa
 @media(max-width:720px){.site-header{height:auto;min-height:100px;padding-block:17px;row-gap:15px}.site-header nav{border-top:1px solid var(--brand-line);padding-top:13px}.wordmark{gap:10px}.app-cta-brand{width:100%;border-left:0;border-top:1px solid var(--line);padding:24px 0 0;align-items:flex-start;text-align:left}.app-cta-brand>span{font-size:38px;letter-spacing:-1.8px}.brand-service-lines{max-width:none;grid-template-columns:1fr 1fr;column-gap:20px}.brand-service-lines>span{font-size:11px}}
 @media(max-width:380px){.wordmark{gap:8px}}
 body.legal .nav,body.legal footer{background:var(--brand-surface);box-shadow:0 0 0 100vmax var(--brand-surface);clip-path:inset(0 -100vmax);color:var(--brand-ink);border-color:var(--brand-line)}body.legal .nav .theme-toggle{border-color:var(--brand-line);color:var(--brand-ink)}
+
+/* Keep navigation visible throughout the page and leave room above anchor targets. */
+:root{--header-height:99px}html{scroll-padding-top:calc(var(--header-height) + 24px)}.brand-header{position:sticky;top:0;z-index:50}.skip-link{z-index:100}
+@media(max-width:720px){:root{--header-height:132px}}
+
+/* A floating glass navigation frame, with a small signature from the logo palette. */
+:root{--nav-glass:rgba(255,255,255,.88);--nav-edge:rgba(255,255,255,.65);--nav-shadow:rgba(63,10,24,.12)}
+[data-theme=dark]{--nav-glass:rgba(16,37,27,.9);--nav-edge:rgba(193,218,196,.22);--nav-shadow:rgba(0,0,0,.28)}
+.brand-header{top:12px;margin:12px 18px 0;width:calc(100% - 36px);border:1px solid var(--nav-edge);border-radius:19px;background:var(--brand-surface);box-shadow:0 8px 28px var(--nav-shadow),inset 0 1px 0 var(--nav-edge);isolation:isolate}.site-header{height:86px}.site-header nav a{position:relative;padding-block:9px}.site-header nav a:after{content:'';position:absolute;left:0;bottom:2px;width:100%;height:2px;background:#17652b;border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .2s ease-out}.site-header nav a:hover:after,.site-header nav a:focus-visible:after{transform:scaleX(1)}[data-theme=dark] .site-header nav a:hover{color:#ffe374}[data-theme=dark] .site-header nav a:after{background:#ffd21c}.site-header .header-app{box-shadow:inset 0 1px 0 #ffffff20}.site-header .theme-toggle{background:rgba(255,255,255,.12)}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.brand-header{background:var(--nav-glass);backdrop-filter:blur(20px) saturate(125%);-webkit-backdrop-filter:blur(20px) saturate(125%)}}
+@media(max-width:720px){.brand-header{top:8px;margin:8px 10px 0;width:calc(100% - 20px);border-radius:16px}.brand-header .site-header{width:calc(100% - 30px);height:auto;min-height:100px;padding-block:14px;row-gap:12px}.site-header nav{border-top:1px solid var(--brand-line);padding-top:8px}.site-header nav a{padding-block:6px}}
+@media(prefers-reduced-motion:reduce){.site-header nav a:after{transition:none}}
+
+/* Green closes the page, with gold accents from the Chumble logo. */
+.site-footer{background:#123b26;color:#fffdf5;border-top:1px solid #396249}.site-footer .wordmark{color:#fffdf5}.site-footer .footer-columns p,.site-footer .footer-columns a,.site-footer .footer-bottom{color:#d6e5d8}.site-footer .footer-columns a:hover,.site-footer .footer-bottom a:hover{color:#ffd21c}.site-footer .footer-bottom{border-color:#396249}.site-footer a:focus-visible{outline-color:#ffd21c}
+[data-theme=dark] .site-footer{background:#0b2518;border-top-color:#2f503c}[data-theme=dark] .site-footer .footer-bottom{border-color:#2f503c}
