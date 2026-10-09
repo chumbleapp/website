@@ -107,20 +107,40 @@
   else window.addEventListener('resize', updateHeight);
 })();
 
-// Let the compact navigation follow the visitor's journey through the page.
+// Keep the current navigation item aligned with the section below the sticky header.
 (() => {
   const header = document.querySelector('.brand-header');
   const links = [...document.querySelectorAll('[data-nav-target]')];
-  if (!header || !links.length || !('IntersectionObserver' in window)) return;
-  const byTarget = new Map(links.map(link => [link.dataset.navTarget, link]));
-  const setCurrent = id => links.forEach(link => link.classList.toggle('is-current', link === byTarget.get(id)));
-  const observer = new IntersectionObserver(entries => {
-    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setCurrent(visible.target.id);
-  }, { rootMargin: '-25% 0px -58% 0px', threshold: [0, .25, .5] });
-  byTarget.forEach((link, id) => {
-    const target = document.getElementById(id);
-    if (target) observer.observe(target);
-  });
+  if (!header || !links.length) return;
+  const sections = links.map(link => ({
+    link,
+    target: document.getElementById(link.dataset.navTarget)
+  })).filter(section => section.target);
+  let scheduled = false;
+  const update = () => {
+    scheduled = false;
+    const position = header.getBoundingClientRect().bottom + 24;
+    sections.forEach(({ link, target }) => {
+      const bounds = target.getBoundingClientRect();
+      const current = bounds.top <= position && bounds.bottom > position;
+      link.classList.toggle('is-current', current);
+      if (current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+  const schedule = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  window.addEventListener('load', schedule);
+  if ('ResizeObserver' in window) {
+    const observer = new ResizeObserver(schedule);
+    observer.observe(header);
+    document.querySelector('main') && observer.observe(document.querySelector('main'));
+  }
+  update();
   header.classList.add('is-ready');
 })();
