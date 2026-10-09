@@ -25,3 +25,7 @@ Four services: food ordering, shopping and delivery, table booking, and event ha
 ## Colour direction
 
 The light theme uses the logo crimson (#d21c30) as the page background, white text, deeper red surfaces, and gold actions. The dark theme uses burgundy backgrounds with the same gold actions. The delivery guide retains a green section as a secondary logo colour.
+
+## FAQ wording
+
+The FAQ follows GoBites’ direct customer questions and Deliveroo’s practical explanations of ordering, tracking, fees and getting help. Answers are original and specific to Chumble’s four services. App availability and partnership enquiries use the established contact email; no competitor delivery times, payment methods, promotions or refund promises are carried over.
