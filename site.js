@@ -1,4 +1,25 @@
 (() => {
+  const menu = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('#main-navigation');
+  if (!menu || !navigation) return;
+  const close = () => {
+    menu.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-label', 'Open navigation');
+    navigation.classList.remove('is-open');
+  };
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') === 'true';
+    menu.setAttribute('aria-expanded', String(!open));
+    menu.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
+    navigation.classList.toggle('is-open', !open);
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') close();
+  });
+})();
+
+(() => {
   const key = 'chumble-theme';
   const toggle = document.querySelector('.theme-toggle');
   const preference = window.matchMedia('(prefers-color-scheme: dark)');
