@@ -106,3 +106,21 @@
   if ('ResizeObserver' in window) new ResizeObserver(updateHeight).observe(header);
   else window.addEventListener('resize', updateHeight);
 })();
+
+// Let the compact navigation follow the visitor's journey through the page.
+(() => {
+  const header = document.querySelector('.brand-header');
+  const links = [...document.querySelectorAll('[data-nav-target]')];
+  if (!header || !links.length || !('IntersectionObserver' in window)) return;
+  const byTarget = new Map(links.map(link => [link.dataset.navTarget, link]));
+  const setCurrent = id => links.forEach(link => link.classList.toggle('is-current', link === byTarget.get(id)));
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setCurrent(visible.target.id);
+  }, { rootMargin: '-25% 0px -58% 0px', threshold: [0, .25, .5] });
+  byTarget.forEach((link, id) => {
+    const target = document.getElementById(id);
+    if (target) observer.observe(target);
+  });
+  header.classList.add('is-ready');
+})();
