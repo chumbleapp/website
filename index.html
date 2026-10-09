@@ -3,55 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Chumble connects you with restaurant meals, everyday deliveries, table reservations and event halls in Ghana.">
+  <meta name="description" content="Order restaurant meals, arrange deliveries, reserve a table and book an event hall with Chumble in Ghana.">
   <meta name="theme-color" content="#fffdf5">
-  <title>Chumble — Delivery &amp; bookings in Ghana</title>
+  <title>Chumble — Food, delivery and bookings</title>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="preload" href="assets/food.jpg" as="image">
+  <link rel="preload" href="assets/dining.jpg" as="image">
+  <link rel="preload" href="assets/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="wordmark" href="index.html" aria-label="Chumble home"><img src="logo.png" width="44" height="44" alt=""><span>chumble<span class="brand-dot">.</span></span></a>
-    <nav aria-label="Main navigation"><a href="#services">Delivery &amp; bookings</a><a href="#join">Become a partner</a></nav>
-    <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">☾</button><a class="header-contact" href="mailto:hello@chumble.app">Contact us ↗</a></div>
-  </header>
+  <div class="hero-shell">
+    <img class="hero-background" src="assets/dining.jpg" width="2000" height="1333" alt="A freshly prepared restaurant meal served at a dining table" fetchpriority="high">
+    <header class="site-header wrap">
+      <a class="wordmark" href="index.html" aria-label="Chumble home"><img src="logo.png" width="44" height="44" alt=""><span>chumble</span></a>
+      <nav aria-label="Main navigation"><a href="#services">Our services</a><a href="#join">Become a partner</a></nav>
+      <div class="header-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">☾</button><a class="header-app" href="#get-app">Get in touch</a></div>
+    </header>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="hero-brand" aria-hidden="true">chumble</p>
+      <h1 id="hero-title">Your favourite food.<br>Your next great plan.</h1>
+      <p>Food delivery, restaurant tables and event halls.<br>All together in one app, made for Ghana.</p>
+      <a class="button button-gold" href="#services">Explore Chumble</a>
+      <a class="scroll-link" href="#main">Discover more <span aria-hidden="true">⌄</span></a>
+    </section>
+  </div>
   <main id="main">
-    <section class="opening" aria-labelledby="hero-title">
-      <div class="opening-top wrap"><span>DELIVERY / DINING / OCCASIONS</span><span class="origin"><span class="ghana-mark" aria-hidden="true"></span> Based in Ghana</span></div>
-      <div class="hero wrap">
-        <div class="hero-copy"><h1 id="hero-title">What are<br>we doing<br><span>today?</span></h1><p>Order lunch. Book dinner. Find a hall for the big day. Start with Chumble.</p><a class="button" href="#services">Let’s make a plan <span aria-hidden="true">↓</span></a></div>
-        <div class="hero-composition">
-          <div class="photo-paper"><span class="photo-note">Something good for lunch.</span><img src="assets/food.jpg" width="1400" height="1400" alt="A bowl of vegetables, greens and grains, photographed from above" fetchpriority="high"><span class="photo-caption">Food from restaurant kitchens, delivered.</span></div>
-          <div class="delivery-label" aria-hidden="true"><div class="label-head">CHUMBLE <span>GH</span></div><span class="label-small">HANDLE WITH APPETITE</span><strong>Kitchen<br>→ doorstep.</strong><div class="label-bottom"><span class="barcode"></span><span>FOOD &amp;<br>EVERYDAY ITEMS</span></div></div>
-          <span class="composition-caption">Less running around.<br>More time for your plans.</span>
-        </div>
-      </div>
-      <div class="opening-bottom wrap"><span>One app. Three ways to make plans.</span><a href="#services">Pick yours below <span aria-hidden="true">↓</span></a></div>
+    <section class="intro wrap" id="food" aria-labelledby="intro-title">
+      <div class="intro-food food-left" aria-hidden="true"><img src="assets/food.jpg" width="1400" height="1400" alt="" loading="lazy"></div>
+      <div class="intro-copy"><span class="eyebrow">FROM LOCAL KITCHENS TO YOUR DOOR</span><h2 id="intro-title">Good food.<br>Without the trip.</h2><p>Find a meal from restaurants near you.<br>Choose what you’re craving, place your order,<br>and follow your delivery to your door.</p><a class="text-link" href="#get-app">Ask about the app <span aria-hidden="true">→</span></a></div>
+      <div class="intro-food food-right" aria-hidden="true"><img src="assets/dining.jpg" width="2000" height="1333" alt="" loading="lazy"></div>
     </section>
-    <section class="planner wrap" id="services" aria-labelledby="planner-title">
-      <div class="planner-heading"><span class="section-note">START HERE</span><h2 id="planner-title">I’m looking for…</h2></div>
-      <div class="planner-layout">
-        <div class="plan-tabs" role="tablist" aria-label="Choose a Chumble service" aria-orientation="vertical">
-          <button class="plan-tab" id="tab-delivery" role="tab" aria-selected="true" aria-controls="panel-delivery" tabindex="0"><span>01</span> A delivery <span aria-hidden="true">↗</span></button>
-          <button class="plan-tab" id="tab-tables" role="tab" aria-selected="false" aria-controls="panel-tables" tabindex="-1"><span>02</span> A table <span aria-hidden="true">↗</span></button>
-          <button class="plan-tab" id="tab-events" role="tab" aria-selected="false" aria-controls="panel-events" tabindex="-1"><span>03</span> A venue <span aria-hidden="true">↗</span></button>
-        </div>
-        <div class="plan-panels">
-          <article class="plan-panel" id="panel-delivery" role="tabpanel" aria-labelledby="tab-delivery" tabindex="0"><span class="ticket-type">DELIVERY REQUEST</span><h3>Bring it to my door.</h3><p>A restaurant meal, groceries or everyday essentials. Choose what you need in the app and follow your delivery.</p><dl><div><dt>For</dt><dd>Food &amp; everyday items</dd></div><div><dt>How</dt><dd>Order in the Chumble app</dd></div></dl><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20delivery%20app%20availability">Ask about delivery availability <span aria-hidden="true">↗</span></a></article>
-          <article class="plan-panel" id="panel-tables" role="tabpanel" aria-labelledby="tab-tables" tabindex="0" hidden><span class="ticket-type">TABLE RESERVATION</span><h3>We’re eating out.</h3><p>Choose a restaurant, a date and a time. Reserve a table for a quiet dinner or a catch-up with friends before you arrive.</p><dl><div><dt>For</dt><dd>Restaurant dining</dd></div><div><dt>How</dt><dd>Choose your date &amp; party size</dd></div></dl><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20table%20reservation%20availability">Ask about table reservations <span aria-hidden="true">↗</span></a></article>
-          <article class="plan-panel" id="panel-events" role="tabpanel" aria-labelledby="tab-events" tabindex="0" hidden><span class="ticket-type">EVENT HALL BOOKING</span><h3>We need a bigger space.</h3><p>A wedding, birthday, meeting or family gathering. Find an event hall that fits your occasion and the people you’re bringing.</p><dl><div><dt>For</dt><dd>Celebrations &amp; gatherings</dd></div><div><dt>How</dt><dd>Find a hall for your occasion</dd></div></dl><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20event%20hall%20booking%20availability">Ask about event hall bookings <span aria-hidden="true">↗</span></a></article>
-        </div>
+    <section class="services wrap" id="services" aria-labelledby="services-title">
+      <div class="section-heading"><h2 id="services-title">More than food delivery.</h2><p>Order in, head out, or bring everyone together.</p></div>
+      <div class="service-grid">
+        <article class="service-card" id="delivery"><a class="service-photo" href="#get-app" tabindex="-1" aria-hidden="true"><img src="assets/food.jpg" width="1400" height="1400" alt="" loading="lazy"></a><div class="service-copy"><h3>Delivery</h3><p>Restaurant meals, groceries and everyday essentials, brought to your door.</p><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20delivery%20availability">Ask about delivery <span aria-hidden="true">→</span></a></div></article>
+        <article class="service-card" id="tables"><a class="service-photo" href="#get-app" tabindex="-1" aria-hidden="true"><img src="assets/restaurant.jpg" width="1000" height="667" alt="" loading="lazy"></a><div class="service-copy"><h3>Table reservations</h3><p>Find a restaurant and reserve your table before you arrive.</p><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20table%20reservations">Ask about dining <span aria-hidden="true">→</span></a></div></article>
+        <article class="service-card" id="events"><a class="service-photo" href="#get-app" tabindex="-1" aria-hidden="true"><img src="assets/venue.jpg" width="1000" height="667" alt="" loading="lazy"></a><div class="service-copy"><h3>Event halls</h3><p>A space for your wedding, party or meeting. Find a hall that fits.</p><a class="text-link" href="mailto:hello@chumble.app?subject=Chumble%20event%20hall%20bookings">Ask about venues <span aria-hidden="true">→</span></a></div></article>
       </div>
-      <p class="planner-note">Looking for the app? <a href="#get-app">Contact us for availability and updates.</a></p>
     </section>
-    <section class="food-section" id="food" aria-labelledby="food-title"><div class="food-inner wrap"><div class="food-heading"><span class="section-note">THE DELIVERY SIDE OF THINGS</span><h2 id="food-title">The kitchen<br>does the cooking.<br><span>We connect<br>the dots.</span></h2></div><div class="route"><div class="route-stop"><span class="route-dot" aria-hidden="true"></span><div><h3>Your choice</h3><p>Find a meal from restaurants and kitchens near you.</p></div></div><div class="route-stop"><span class="route-dot" aria-hidden="true"></span><div><h3>Their kitchen</h3><p>Your food is prepared by the restaurant you order from.</p></div></div><div class="route-stop"><span class="route-dot" aria-hidden="true"></span><div><h3>Your doorstep</h3><p>Follow the delivery, then enjoy your meal wherever you are.</p></div></div></div></div></section>
-    <section class="partners wrap" id="join" aria-labelledby="join-title"><div class="partner-intro"><span class="section-note">ON THE OTHER SIDE OF THE ORDER?</span><h2 id="join-title">Let’s do<br> business.</h2><p>For the kitchens that feed us and the people who keep deliveries moving.</p></div><div class="partner-list"><article><span class="partner-symbol" aria-hidden="true">↗</span><div><h3>Restaurant owners</h3><p>Put your menu on Chumble, receive orders and table bookings, and get support with delivery.</p><a class="text-link" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20restaurant%20partner">Tell us about your restaurant ↗</a></div></article><article><span class="partner-symbol" aria-hidden="true">→</span><div><h3>Delivery partners</h3><p>Deliver in your community, choose when you want to work, and earn from completed deliveries.</p><a class="text-link" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20delivery%20partner">Ask about joining the delivery team ↗</a></div></article></div></section>
-    <section class="contact-section wrap" id="get-app" aria-labelledby="contact-title"><div><span class="section-note">APP UPDATES / PARTNERSHIPS / QUESTIONS</span><h2 id="contact-title">Talk to a person.</h2></div><a href="mailto:hello@chumble.app" class="contact-email">hello@chumble.app <span aria-hidden="true">↗</span></a><p>Ask us about the app, our services, or working with Chumble.</p></section>
+    <section class="app-features" aria-labelledby="features-title"><div class="wrap"><div class="section-heading"><h2 id="features-title">One app for everyday plans.</h2><p>Less organising. More time for what you came to do.</p></div><div class="feature-layout">
+      <div class="feature-column"><article><span class="feature-number">01</span><h3>Choose a meal</h3><p>Browse food from local restaurants and kitchens.</p></article><article><span class="feature-number">02</span><h3>Follow your order</h3><p>Keep track of your delivery on its way to you.</p></article></div>
+      <div class="phone-scene"><div class="phone" aria-hidden="true"><span class="phone-camera"></span><div class="phone-content"><span class="phone-brand">chumble</span><span class="phone-greeting">What’s your plan?</span><div class="phone-meal"><img src="assets/food.jpg" width="1400" height="1400" alt="" loading="lazy"><span>Something delicious.</span></div><div class="phone-choice"><span>Food &amp; delivery</span><span>→</span></div><div class="phone-choice"><span>Find a table</span><span>→</span></div><div class="phone-choice"><span>Book an event hall</span><span>→</span></div></div></div><p class="phone-caption">Explore the Chumble services</p></div>
+      <div class="feature-column"><article><span class="feature-number">03</span><h3>Reserve a table</h3><p>Choose your restaurant, date and time before you go.</p></article><article><span class="feature-number">04</span><h3>Find your venue</h3><p>Bring your guests together in the right event hall.</p></article></div>
+    </div></div></section>
+    <section class="partners wrap" id="join" aria-labelledby="partners-title"><div class="section-heading partner-heading"><h2 id="partners-title">Grow with Chumble.</h2><p>For restaurant owners and delivery partners in Ghana.</p></div>
+      <div class="partner-tabs" role="tablist" aria-label="Partner opportunities"><button class="plan-tab" id="tab-restaurants" role="tab" aria-selected="true" aria-controls="panel-restaurants" tabindex="0">Restaurant partners</button><button class="plan-tab" id="tab-couriers" role="tab" aria-selected="false" aria-controls="panel-couriers" tabindex="-1">Delivery partners</button></div>
+      <article class="partner-panel" id="panel-restaurants" role="tabpanel" aria-labelledby="tab-restaurants" tabindex="0"><img src="assets/restaurant.jpg" width="1000" height="667" alt="A restaurant dining room with tables and warm lighting" loading="lazy"><div><span class="eyebrow">FOR RESTAURANTS</span><h3>Reach more customers.</h3><p>Bring your menu to Chumble. Receive food orders and table bookings, with support for delivery.</p><a class="button" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20restaurant%20partner">Become a restaurant partner</a></div></article>
+      <article class="partner-panel courier-panel" id="panel-couriers" role="tabpanel" aria-labelledby="tab-couriers" tabindex="0" hidden><div class="courier-visual" aria-hidden="true"><img src="logo.png" width="240" height="240" alt=""><span>Deliver with<br>Chumble.</span></div><div><span class="eyebrow">FOR DELIVERY PARTNERS</span><h3>Earn with every delivery.</h3><p>Deliver orders in your community. Choose when you want to work and earn from completed deliveries.</p><a class="button" href="mailto:hello@chumble.app?subject=Become%20a%20Chumble%20delivery%20partner">Become a delivery partner</a></div></article>
+    </section>
+    <section class="app-cta wrap" id="get-app" aria-labelledby="app-title"><div><span class="eyebrow">MEET CHUMBLE</span><h2 id="app-title">Your next order.<br>Your next outing.<br>One place to start.</h2><p>Get in touch for app availability and updates.</p><a class="button" href="mailto:hello@chumble.app?subject=Chumble%20app%20availability">Ask about the app</a></div><div class="app-cta-brand" aria-hidden="true"><img src="logo.png" width="240" height="240" alt=""><span>chumble</span><small>Delivery. Dining. Occasions.</small></div></section>
   </main>
-  <footer class="site-footer wrap"><div class="footer-top"><span>Chumble Technologies Ltd<br>A delivery and booking platform registered in Ghana.</span><nav aria-label="Legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></nav></div><a class="footer-wordmark" href="index.html" aria-label="Chumble home">chumble<span>.</span></a><div class="footer-bottom"><span>© 2026 Chumble Technologies Ltd</span><span>Made for plans, big and small.</span></div></footer>
+  <footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="wordmark" href="index.html">chumble</a><span class="footer-country">Ghana <span aria-hidden="true">●</span></span></div><div class="footer-columns"><div><h3>Chumble</h3><p>Food, delivery and bookings.<br>A platform registered in Ghana.</p></div><nav aria-label="Services"><h3>Our services</h3><a href="#delivery">Delivery</a><a href="#tables">Table reservations</a><a href="#events">Event halls</a></nav><nav aria-label="Partners"><h3>Work with us</h3><a href="mailto:hello@chumble.app?subject=Restaurant%20partnership">Restaurant partners</a><a href="mailto:hello@chumble.app?subject=Delivery%20partnership">Delivery partners</a></nav><nav aria-label="Support and legal"><h3>Learn more</h3><a href="mailto:hello@chumble.app">Contact us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a></nav></div><div class="footer-bottom"><span>© 2026 Chumble Technologies Ltd</span><a href="mailto:hello@chumble.app">hello@chumble.app</a></div></div></footer>
 </body>
 </html>
