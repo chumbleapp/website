@@ -116,6 +116,21 @@ body.legal .nav,body.legal footer{background:var(--brand-surface);box-shadow:0 0
 /* Keep the page focused on its primary headings and actions. */
 .eyebrow,.hero-start-label,.service-motion>span,.app-cta-brand>small{display:none}
 
+/* Let the three step descriptions carry the motion instead of a progress rail. */
+.journey-steps:before,.journey-steps li:after,.journey-panel.is-in-view .journey-steps li:before{display:none}
+.journey-steps{padding-top:0}
+.journey-steps li{padding-top:0}
+.journey-panel.is-in-view .journey-steps li h3,
+.journey-panel.is-in-view .journey-steps li p{animation:step-copy-in .6s ease-out both}
+.journey-panel.is-in-view .journey-steps li:nth-child(1) h3,
+.journey-panel.is-in-view .journey-steps li:nth-child(1) p{animation-delay:.1s}
+.journey-panel.is-in-view .journey-steps li:nth-child(2) h3,
+.journey-panel.is-in-view .journey-steps li:nth-child(2) p{animation-delay:.35s}
+.journey-panel.is-in-view .journey-steps li:nth-child(3) h3,
+.journey-panel.is-in-view .journey-steps li:nth-child(3) p{animation-delay:.6s}
+@keyframes step-copy-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.journey-panel.is-in-view .journey-steps li h3,.journey-panel.is-in-view .journey-steps li p{animation:none}}
+
 @media(max-width:720px){
   .brand-header .site-header{min-height:0;height:auto;padding-block:8px;row-gap:0}
   .brand-header .wordmark{font-size:28px}
