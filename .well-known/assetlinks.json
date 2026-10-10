@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.chumble.customer",
+      "sha256_cert_fingerprints": [
+        "CA:64:D7:67:F1:FD:5B:E5:B4:F5:A9:B2:3B:92:C8:0D:A1:F5:17:D2:8D:E3:91:F3:6F:0B:B7:99:52:D9:87:DF"
+      ]
+    }
+  }
+]
