@@ -403,3 +403,25 @@ body{font-size:16px;line-height:1.5}
   .app-download-links{margin-top:2px}
   .app-contact{font-size:12px!important;line-height:1.6!important}
 }
+
+/* The service cards and their instructions now form one guided destination. */
+.services-and-guides .section-heading{margin-bottom:38px}
+.how-content{margin-top:78px;padding:64px 58px 60px;border-radius:28px;background:var(--green);color:var(--inverse)}
+.how-content .how-heading{margin-bottom:28px}
+.how-content .how-heading h2{color:var(--inverse);font-size:clamp(32px,3.7vw,48px)}
+.how-content .how-heading>p{max-width:30rem}
+.how-content .journey-tabs{margin-top:24px}
+.how-content .how-contact{margin-top:30px}
+@media(max-width:720px){
+  .services-and-guides .section-heading{margin-bottom:28px}
+  .how-content{margin-top:54px;padding:36px 20px 34px;border-radius:20px}
+  .how-content .how-heading{margin-bottom:22px}
+  .how-content .how-heading h2{font-size:32px}
+  .how-content .journey-tabs{margin-block:22px 28px}
+}
+
+@media(min-width:721px){
+  /* Keep each stop on the centre spine, outside the card edge. */
+  .service-card:after{left:auto;right:-34px}
+  .service-card:nth-child(even):after{left:-34px;right:auto}
+}
