@@ -16,12 +16,12 @@
   })();
   if (africanTimeZone || africanLocale) {
     const imageNames = new Map([
-      ['food-ordering-portrait.png', 'food-ordering_african.png'],
-      ['shopping-delivery-portrait-v2.png', 'shopping-delivery_african.png'],
-      ['table-booking-portrait.png', 'table-booking_african.png'],
-      ['event-hall-portrait.png', 'event-hall_african.png'],
-      ['local-services-portrait-v2.png', 'local-services_african.png'],
-      ['delivery-cargo-portrait.png', 'delivery-cargo_african.png']
+      ['food-ordering.png', 'food-ordering_african.png'],
+      ['shopping-delivery.png', 'shopping-delivery_african.png'],
+      ['table-booking.png', 'table-booking_african.png'],
+      ['event-hall.png', 'event-hall_african.png'],
+      ['local-services.png', 'local-services_african.png'],
+      ['delivery-cargo.png', 'delivery-cargo_african.png']
     ]);
     document.querySelectorAll('img[src]').forEach(image => {
       const name = image.src.split('/').pop();
