@@ -345,3 +345,61 @@ body.legal .nav,body.legal footer{background:var(--brand-surface);box-shadow:0 0
   .site-header nav a{flex:none;width:100%;justify-content:flex-start;padding:12px 14px!important;border:1px solid var(--brand-line)!important;border-radius:12px;background:rgba(255,255,255,.06)}
   .site-header nav a:after{display:none}
 }
+
+/* Final type and spacing pass: keep hierarchy readable and related content together. */
+body{font-size:16px;line-height:1.5}
+.hero-copy>p,.intro p,.section-heading>p,.how-heading>p,.faq-heading p,.app-cta p{max-width:50rem}
+.hero-copy>p{max-width:34rem}
+.section-heading>p,.how-heading>p{max-width:38rem}
+.intro-copy p{max-width:31rem;margin-inline:auto}
+.service-copy p,.partner-panel p,.faq-list details>p{max-width:42rem}
+.app-cta p{max-width:34rem}
+.app-download-links{align-items:stretch;margin-top:4px}
+.app-download-links a{line-height:1.35}
+.app-contact{margin-top:18px!important;margin-bottom:0!important;font-size:13px!important}
+.app-contact a{color:var(--green-accent);font-weight:700;text-underline-offset:3px}
+.service-copy h3,.partner-panel h3{line-height:1.18}
+.service-copy p,.partner-panel p,.faq-list details>p{line-height:1.65}
+.faq-list summary{min-height:62px}
+
+@media(min-width:721px){
+  .hero{row-gap:38px}
+  .hero-copy>p{font-size:17px;line-height:1.7;margin-bottom:27px}
+  .hero-start{padding-top:22px}
+  .service-card{min-height:285px}
+  .service-card .service-copy{padding:30px}
+  .service-copy p{font-size:15px;margin-top:16px;margin-bottom:24px}
+  .how-section{padding-block:82px}
+  .journey-tabs{margin-block:28px 36px}
+  .journey-steps{gap:44px}
+  .journey-steps p{line-height:1.7}
+  .partners{padding-block:88px}
+  .app-cta{padding-block:56px}
+}
+
+@media(max-width:720px){
+  .hero{padding-block:26px 34px}
+  .hero-copy>p{max-width:29rem;margin-bottom:22px}
+  .hero-start{margin-top:4px}
+  .intro{padding-block:58px 72px}
+  .intro-copy{padding-inline:18px}
+  .intro p{max-width:23rem}
+  .section-heading{margin-bottom:24px}
+  .service-grid{gap:18px}
+  .service-card .service-copy{padding:19px 21px 23px}
+  .service-copy p{line-height:1.65}
+  .how-section{padding-block:56px}
+  .how-heading>p{max-width:30rem}
+  .journey-tabs{margin-block:22px 26px}
+  .journey-steps{gap:25px}
+  .journey-steps p{line-height:1.65}
+  .partners{padding-block:56px}
+  .partner-panel+.partner-panel{margin-top:18px}
+  .partner-panel p{line-height:1.65}
+  .faq-section{padding-bottom:58px}
+  .faq-list summary{min-height:58px;line-height:1.45}
+  .faq-list details>p{line-height:1.7}
+  .app-cta{gap:28px;padding:29px 21px}
+  .app-download-links{margin-top:2px}
+  .app-contact{font-size:12px!important;line-height:1.6!important}
+}

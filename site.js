@@ -2,13 +2,6 @@
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#main-navigation');
   if (!menu || !navigation) return;
-  const headerApp = document.querySelector('.header-app');
-  if (headerApp) {
-    headerApp.textContent = 'Get the app';
-    headerApp.href = '#get-app';
-    headerApp.removeAttribute('target');
-    headerApp.removeAttribute('rel');
-  }
   const close = () => {
     menu.setAttribute('aria-expanded', 'false');
     menu.setAttribute('aria-label', 'Open navigation');
@@ -23,116 +16,6 @@
   navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape') close();
-  });
-})();
-
-// Keep service copy specific to the action a visitor is considering.
-(() => {
-  const introTitle = document.querySelector('#intro-title');
-  if (introTitle) introTitle.innerHTML = 'Local food.<br>Useful plans.';
-  const introText = document.querySelector('.intro-copy p');
-  if (introText) introText.innerHTML = 'Find a meal from a local kitchen,<br>pick up essentials, or make plans<br>for where you want to go next.';
-  const introLink = document.querySelector('.intro-copy .text-link');
-  if (introLink) introLink.firstChild.textContent = 'Check availability ';
-
-  const availability = document.querySelector('.app-cta p');
-  if (availability) availability.textContent = 'Choose the app for your role: customers, business partners, or delivery and transport partners.';
-  const appAction = document.querySelector('.app-cta .button');
-  if (appAction) {
-    appAction.textContent = 'Get the customer app';
-    appAction.href = 'https://play.google.com/store/apps/details?id=app.chumble.customer';
-    appAction.target = '_blank';
-    appAction.rel = 'noopener';
-  }
-  if (appAction && !document.querySelector('.app-download-links')) {
-    const downloads = document.createElement('div');
-    downloads.className = 'app-download-links';
-    downloads.innerHTML = '<a class="button" href="https://play.google.com/store/apps/details?id=app.chumble.partner" target="_blank" rel="noopener">Get the partner app <span aria-hidden="true">↗</span></a><a class="button" href="https://play.google.com/store/apps/details?id=app.chumble.delivery" target="_blank" rel="noopener">Get the delivery app <span aria-hidden="true">↗</span></a>';
-    appAction.classList.add('app-download-button');
-    const appContent = appAction.parentElement;
-    appContent.append(downloads);
-    downloads.prepend(appAction);
-  }
-
-  const appFaq = [...document.querySelectorAll('.faq-list details')].find(item => item.querySelector('summary')?.textContent.includes('get the Chumble app'));
-  if (appFaq) {
-    const answer = appFaq.querySelector('p');
-    if (answer) {
-      answer.innerHTML = 'Download the <a href="https://play.google.com/store/apps/details?id=app.chumble.customer" target="_blank" rel="noopener">customer app</a> from Google Play. Partners can use the <a href="https://play.google.com/store/apps/details?id=app.chumble.partner" target="_blank" rel="noopener">partner app</a>, and delivery partners can use the <a href="https://play.google.com/store/apps/details?id=app.chumble.delivery" target="_blank" rel="noopener">delivery partner app</a>.';
-    }
-  }
-
-  const partnerHeading = document.querySelector('.partner-heading h2');
-  if (partnerHeading) partnerHeading.textContent = 'Build with Chumble.';
-  const partnerSubheading = document.querySelector('.partner-heading > p');
-  if (partnerSubheading) partnerSubheading.remove();
-  const businessPanel = document.querySelector('#panel-restaurants');
-  if (businessPanel) {
-    const image = businessPanel.querySelector('img');
-    const label = businessPanel.querySelector('.eyebrow');
-    const title = businessPanel.querySelector('h3');
-    const copy = businessPanel.querySelector('p');
-    const action = businessPanel.querySelector('.button');
-    if (label) label.textContent = 'RESTAURANT PARTNERS';
-    if (title) title.textContent = 'Put your menu on Chumble.';
-    if (copy) copy.textContent = 'Tell us your restaurant name, location and the food you serve. We will explain how orders, delivery and table bookings can work for your business.';
-    if (action) { action.textContent = 'Get the partner app'; action.href = 'https://play.google.com/store/apps/details?id=app.chumble.partner'; action.target = '_blank'; action.rel = 'noopener'; }
-  }
-  const courierPanel = document.querySelector('#panel-couriers');
-  const partnerSection = document.querySelector('.partners');
-  const makePartnerPanel = ({id, image, alt, label, title, copy, app, appLabel = 'Get the partner app'}) => {
-    const panel = document.createElement('article');
-    panel.className = 'partner-panel';
-    panel.id = id;
-    panel.innerHTML = `<img src="${image}" alt="${alt}" loading="lazy"><div><span class="eyebrow">${label}</span><h3>${title}</h3><p>${copy}</p><a class="button" href="${app}" target="_blank" rel="noopener">${appLabel} ↗</a></div>`;
-    return panel;
-  };
-  if (partnerSection && courierPanel && !document.querySelector('#panel-merchants')) {
-    const partnerApp = 'https://play.google.com/store/apps/details?id=app.chumble.partner';
-    const deliveryApp = 'https://play.google.com/store/apps/details?id=app.chumble.delivery';
-    const merchantPanel = makePartnerPanel({id: 'panel-merchants', image: 'assets/shopping.jpg', alt: 'Products displayed at a local store', label: 'MERCHANT PARTNERS', title: 'Sell through Chumble.', copy: 'For shops offering groceries, household items, hardware, clothing and other local products.', app: partnerApp});
-    const eventPanel = makePartnerPanel({id: 'panel-events', image: 'assets/venue.jpg', alt: 'An event hall prepared for a gathering', label: 'EVENT HALL PARTNERS', title: 'Fill your event hall.', copy: 'Help people find your venue for meetings, weddings, celebrations and other gatherings.', app: partnerApp});
-    const cargoPanel = makePartnerPanel({id: 'panel-cargo', image: 'assets/transport-partner.png', alt: 'Two transport workers loading bulk orders into a cargo van', label: 'TRANSPORT PARTNERS', title: 'Move bulk orders with Chumble.', copy: 'Provide transportation for larger orders and bulk transfers between businesses, stores and customers.', app: deliveryApp, appLabel: 'Get the delivery app'});
-    partnerSection.insertBefore(merchantPanel, courierPanel);
-    partnerSection.insertBefore(eventPanel, courierPanel);
-    partnerSection.append(cargoPanel);
-  }
-  if (courierPanel) {
-    const action = courierPanel.querySelector('.button');
-    if (action) { action.textContent = 'Get the delivery app'; action.href = 'https://play.google.com/store/apps/details?id=app.chumble.delivery'; action.target = '_blank'; action.rel = 'noopener'; }
-  }
-
-  const serviceCopy = {
-    delivery: ['Order from a nearby restaurant or kitchen. Review the meal and delivery details before confirming.', 'Ask about ordering food →'],
-    shopping: ['Choose a local store, browse what is available, and send your groceries, household items or other purchases to your address.', 'Ask about store orders →'],
-    tables: ['Look through restaurants, choose a date and time, and keep the reservation details ready for your visit.', 'Ask about table reservations →'],
-    events: ['Compare event halls for a meeting, wedding or family gathering, then contact the team with the venue and date you have in mind.', 'Ask about event halls →']
-  };
-  Object.entries(serviceCopy).forEach(([id, [description, link]]) => {
-    const card = document.getElementById(id);
-    if (!card) return;
-    const paragraph = card.querySelector('.service-copy p');
-    const action = card.querySelector('.service-copy .text-link');
-    if (paragraph) paragraph.textContent = description;
-    if (action) action.childNodes[0].textContent = link.replace(' →', ' ');
-  });
-
-  const steps = {
-    'panel-food-guide': [['Browse a menu', 'See what nearby restaurants and kitchens are offering.'], ['Check the details', 'Review the items, address and order total before confirming.'], ['Follow the delivery', 'Keep an eye on the order and be ready to receive it.']],
-    'panel-shopping-guide': [['Choose a store', 'Look for groceries, supplies, hardware or clothing from local stores.'], ['Check what is available', 'Select your items and confirm the delivery details.'], ['Receive your order', 'Follow the order and check your purchases when they arrive.']],
-    'panel-table-guide': [['Pick a restaurant', 'Find somewhere that suits the meal and the people joining you.'], ['Choose a time', 'Select the date and time that works for your plans.'], ['Keep the booking handy', 'Review the details before you set off for the restaurant.']],
-    'panel-event-guide': [['Shortlist a space', 'Explore halls that fit the occasion and the number of guests.'], ['Review the venue', 'Check the details against your date and plans.'], ['Start the conversation', 'Contact the team with the space and date you are considering.']]
-  };
-  Object.entries(steps).forEach(([id, items]) => {
-    const panel = document.getElementById(id);
-    if (!panel) return;
-    panel.querySelectorAll('.journey-steps li').forEach((step, index) => {
-      if (!items[index]) return;
-      const heading = step.querySelector('h3');
-      const text = step.querySelector('p');
-      if (heading) heading.textContent = items[index][0];
-      if (text) text.textContent = items[index][1];
-    });
   });
 })();
 
