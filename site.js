@@ -1,4 +1,37 @@
 (() => {
+  const africanRegions = new Set([
+    'DZ', 'AO', 'BJ', 'BW', 'BF', 'BI', 'CV', 'CM', 'CF', 'TD', 'KM', 'CG', 'CD', 'CI', 'DJ', 'EG', 'GQ', 'ER', 'SZ', 'ET', 'GA', 'GM', 'GH', 'GN', 'GW', 'KE', 'LS', 'LR', 'LY', 'MG', 'MW', 'ML', 'MR', 'MU', 'MA', 'MZ', 'NA', 'NE', 'NG', 'RW', 'ST', 'SN', 'SC', 'SL', 'SO', 'ZA', 'SS', 'SD', 'TZ', 'TG', 'TN', 'UG', 'ZM', 'ZW'
+  ]);
+  const africanTimeZone = (() => {
+    try { return Intl.DateTimeFormat().resolvedOptions().timeZone?.startsWith('Africa/'); } catch { return false; }
+  })();
+  const africanLocale = (() => {
+    const locales = [navigator.language, ...(navigator.languages || [])].filter(Boolean);
+    return locales.some(locale => {
+      try {
+        const region = new Intl.Locale(locale).region;
+        return region && africanRegions.has(region);
+      } catch { return false; }
+    });
+  })();
+  if (africanTimeZone || africanLocale) {
+    const imageNames = new Map([
+      ['food-ordering-portrait.png', 'food-ordering_african.png'],
+      ['shopping-delivery-portrait-v2.png', 'shopping-delivery_african.png'],
+      ['table-booking-portrait.png', 'table-booking_african.png'],
+      ['event-hall-portrait.png', 'event-hall_african.png'],
+      ['local-services-portrait-v2.png', 'local-services_african.png'],
+      ['delivery-cargo-portrait.png', 'delivery-cargo_african.png']
+    ]);
+    document.querySelectorAll('img[src]').forEach(image => {
+      const name = image.src.split('/').pop();
+      const africanName = imageNames.get(name);
+      if (africanName) image.src = image.src.replace(name, africanName);
+    });
+  }
+})();
+
+(() => {
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#main-navigation');
   if (!menu || !navigation) return;
